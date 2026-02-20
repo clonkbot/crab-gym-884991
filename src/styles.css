@@ -1,0 +1,162 @@
+/* Grain Overlay */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Crab Animation */
+.crab-mascot {
+  animation: crab-bob 3s ease-in-out infinite;
+}
+
+.crab-left-claw {
+  transform-origin: 45px 90px;
+  animation: flex-left 1.5s ease-in-out infinite;
+}
+
+.crab-right-claw {
+  transform-origin: 155px 90px;
+  animation: flex-right 1.5s ease-in-out infinite;
+}
+
+.crab-eyes {
+  animation: eye-blink 4s ease-in-out infinite;
+}
+
+@keyframes crab-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes flex-left {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+@keyframes flex-right {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes eye-blink {
+  0%, 45%, 55%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.1); }
+}
+
+/* Wave Animation */
+.wave-svg {
+  height: 40%;
+}
+
+.wave-1 {
+  animation: wave-float 8s ease-in-out infinite;
+}
+
+.wave-2 {
+  animation: wave-float 10s ease-in-out infinite reverse;
+}
+
+@keyframes wave-float {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-30px); }
+}
+
+/* Hero Animation */
+.hero-content {
+  animation: hero-fade-in 1s ease-out forwards;
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stats Animation */
+.stat-item {
+  animation: stat-pop 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes stat-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Class Card Animation */
+.class-card {
+  animation: card-slide-up 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes card-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pricing Card Animation */
+.pricing-card {
+  animation: pricing-fade 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes pricing-fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  background: #E85D4C;
+  color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FEF3E2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E85D4C;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C94A3B;
+}
